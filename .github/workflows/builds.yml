@@ -345,12 +345,12 @@ jobs:
 
       # Only build & upload installer for release builds on windows-2022
       - name: Build the Installer
-        if: matrix.os == 'windows-2022' && env.B_BUILD_TYPE == 'Release'
+        if: matrix.os == 'windows-2022'
         run: |
           & "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe" /Qp .\build\installer-inno\input-leap.iss
 
       - uses: actions/upload-artifact@v4
-        if: matrix.os == 'windows-2022' && env.B_BUILD_TYPE == 'Release'
+        if: matrix.os == 'windows-2022'
         with:
           name: windows-installer
           path: .\build\installer-inno\bin

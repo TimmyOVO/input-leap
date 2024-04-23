@@ -18,7 +18,7 @@ on:
 
 # Set the build type here
 env:
-  B_BUILD_TYPE: ${{ (inputs.build_release || github.event_name == 'release') && 'Release' || 'Debug' }}
+  B_BUILD_TYPE: 'Release'
   DEBIAN_FRONTEND: noninteractive
 
 jobs:
